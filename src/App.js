@@ -1,25 +1,54 @@
 import TreeNode from './Components/TreeNode.js'
+import './Styles/style.css'
 
 function App() {
 
     const test = {
-        "firstName": "Joe",
-        "lastName": "Jackson",
-        "gender": "male",
-        "age": 28,
-        "address": [
-            {"car" : "Gencoupe",
-             "Gas" : "91orBust"},
-             "tesla"
-        ],
-        "phoneNumbers": [
-            { "type": "home", "number": "7349282382" }
-        ]
-     }
+                    "quiz":{
+                        "sport": {
+                            "q1": {
+                                "question": "Which one is correct team name in NBA?",
+                                "options": [
+                                    "New York Bulls",
+                                    "Los Angeles Kings",
+                                    "Golden State Warriros",
+                                    "Huston Rocket"
+                                ],
+                                "answer": "Huston Rocket"
+                            }
+                        },
+                        "maths": {
+                            "q1": {
+                                "question": "5 + 7 = ?",
+                                "options": [
+                                    "10",
+                                    "11",
+                                    "12",
+                                    "13"
+                                ],
+                                "answer": "12"
+                            },
+                            "q2": {
+                                "question": "12 - 8 = ?",
+                                "options": [
+                                    "1",
+                                    "2",
+                                    "3",
+                                    "4"
+                                ],
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+
+
 
      for(let o in test){
         console.log("o val " + o + " array value " + Array.isArray(test[o]))
     }
+
+    // for testing, pass a JSON object as a "data" prop to a tree node component
 
   return (
     <div className="App">

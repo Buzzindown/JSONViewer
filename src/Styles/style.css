@@ -1,0 +1,19 @@
+ul {
+    margin: 0px;
+}
+
+li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+button {
+    color: black;
+    border-style: solid;
+    border-color: black;
+}
+
+button:hover {
+    color: white;
+    background-color: black;
+}
