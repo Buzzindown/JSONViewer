@@ -7,11 +7,11 @@ function App() {
         "lastName": "Jackson",
         "gender": "male",
         "age": 28,
-        "address": {
-            "streetAddress": "101",
-            "city": "San Diego",
-            "state": "CA"
-        },
+        "address": [
+            {"car" : "Gencoupe",
+             "Gas" : "91orBust"},
+             "tesla"
+        ],
         "phoneNumbers": [
             { "type": "home", "number": "7349282382" }
         ]
@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <h1>JSON File Viewer</h1>
-      <TreeNode data={test}/>
+      <TreeNode data={test} keyName="root"/>
     </div>
   );
 }

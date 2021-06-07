@@ -1,21 +1,19 @@
 import React, { Component } from 'react'
+import ValueNode from './ValueNode.js'
+import ObjectNode from './ObjectNode.js'
+import ArrayNode from './ArrayNode.js'
 
 class TreeNode extends Component {
-    // this will be our main container class that will return
-    // array/object/value depending on it's type
+
     constructor(props) {
         super(props)
-    
-        // just want to hold data that we'll pass to one of our object
+
         this.state = {
+             keyName: this.props.keyName,
              data: this.props.data
         }
-
-        console.log(Object.keys(this.props.data));
     }
 
-    // probably make methods for checking the types 
-    // pass this the value part of our kv pairs
     isValue(object){
         if(object === null || typeof object === 'undefined' || typeof object === 'object') {
             return false
@@ -31,7 +29,7 @@ class TreeNode extends Component {
     }
 
     isArray(object){
-        if(this.isObject(object) && Array.isArray(object)) {
+        if(typeof object === 'object' && Array.isArray(object)) {
             return true
         }
         return false
@@ -39,15 +37,23 @@ class TreeNode extends Component {
 
     
     render() {
-        const { data } = this.state 
+        const { keyName, data } = this.state 
+
         if(this.isValue(data)){
-            // create a value component and pass data
+
+           return <ValueNode data={data} keyName={keyName}/>
+
         }else if(this.isObject(data)){
-            // create an object component and pass data
+
+            return <ObjectNode data={data} keyName={keyName}/>
+
         }else if(this.isArray(data)){
 
+            return <ArrayNode data={data} keyName={keyName}/>
+
         }
-        return <h1>lol</h1>
+
+        return <h1>ERROR</h1>
     }
 }
 
