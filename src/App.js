@@ -1,7 +1,8 @@
-import TreeNode from './Components/TreeNode.js'
 import './Styles/style.css'
+import ParentForApi from './Components/ParentForApi.js'
 
 function App() {
+
 
     const test = {
                     "quiz":{
@@ -48,14 +49,18 @@ function App() {
         console.log("o val " + o + " array value " + Array.isArray(test[o]))
     }
 
+  
+
     // for testing, pass a JSON object as a "data" prop to a tree node component
 
   return (
     <div className="App">
       <h1>JSON Viewer</h1>
-      <TreeNode data={test} keyName="root"/>
+      <ParentForApi/>
     </div>
   );
+
+
 }
 
 export default App;

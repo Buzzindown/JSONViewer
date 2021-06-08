@@ -37,8 +37,9 @@ class TreeNode extends Component {
 
     
     render() {
+        
         const { keyName, data } = this.state 
-
+        console.log("FROM NODE " + JSON.stringify(data))
         if(this.isValue(data)){
 
            return <ValueNode data={data} keyName={keyName}/>
