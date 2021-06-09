@@ -54,7 +54,6 @@ class ArrayNode extends Component {
     }
     
     render() {
-
         return (
             this.state.showing ? this.renderShowing() : this.renderNotShowing()
         )
